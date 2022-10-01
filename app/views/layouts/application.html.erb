@@ -30,9 +30,9 @@
       <div>
         
         
-        <i class="fa-solid fa-house"></i><%= link_to "Home"%>
+        <i class="fa-solid fa-house"></i><%= link_to "Home", root_path %>
       
-        <i class="fa-solid fa-users"></i><%= link_to "Users"%>
+        <i class="fa-solid fa-users"></i><%= link_to "Users", user_path(current_user) %>
       
         <i class="fa-sharp fa-solid fa-book-open"></i><%= link_to "Books", root_path %>
       
