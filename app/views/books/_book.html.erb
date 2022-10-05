@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<div class="container">  
+  <div class="row">  
+   <div class="col-lg-4">
+
+<h1>User info</h1>
+<% if @user.image.attached? %>
+      <%= image_tag @user.image, size: "100x100" %>
+    <% else %>
+      <%= image_tag 'no_image', size: "100x100" %>
+    <% end %>
+<t class="table table-striped">
+   <p> name <%= @user.name %></p>
+  <p>introduction
+<% if @user.caption.attached? %>
+  <%= @user.caption %></p>
+  <% else %>
+  <% end %>
+</t>
+  <div class = "edit">
+<%= link_to edit_user_path(current_user) do %>
+  <i class="fa-sharp fa-solid fa-user-gear"></i>
+<% end %>
+</div>
+<h1>New book</h1>
+<%= form_with model: Book.new do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+
+  <p>Opinion</p>
+  <%= f.text_field :body %>
+
+  <p><%= f.submit 'Create Book', class: "btn btn-success" %></p>
+<% end %>
+</div>
+</div>
+</div>
+</div>
