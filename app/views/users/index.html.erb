@@ -1,1 +1,26 @@
-<%= render 'books/book', user: @user, books: @books %>
+<p id="notice"><%= notice %></p>
+<div class="container">  
+  <div class="row">  
+  <table class="table table-striped">
+   <div class="col-lg-4">
+    
+
+    <%= render 'books/book', users: @users, books: @books %>
+
+      </div>
+      <div class="col-lg-8">
+          <h1>Users</h1>
+          <% @books.each do |book| %>
+          <p>image 
+          <% if @user.image.attached? %>
+          <%= image_tag @user.image, size: "100x100" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "100x100" %>
+          <% end %>
+          </p>
+          <p><%= @user.name %>
+          <%= link_to "Show", user_path(current_user.id) %>
+          <% end %>
+    
+</table>
+</div>

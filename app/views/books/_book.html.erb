@@ -3,7 +3,7 @@
   <div class="row">  
    <div class="col-lg-4">
 
-<h1>User info</h1>
+<h2>User info</h2>
 <% if @user.image.attached? %>
       <%= image_tag @user.image, size: "100x100" %>
     <% else %>
@@ -11,18 +11,15 @@
     <% end %>
 <t class="table table-striped">
    <p> name <%= @user.name %></p>
-  <p>introduction
-<% if @user.caption.attached? %>
-  <%= @user.caption %></p>
-  <% else %>
-  <% end %>
+  <p> introduction <%= @user.caption %></p>
+  
 </t>
   <div class = "edit">
 <%= link_to edit_user_path(current_user) do %>
   <i class="fa-sharp fa-solid fa-user-gear"></i>
 <% end %>
 </div>
-<h1>New book</h1>
+<h2>New book</h2>
 <%= form_with model: Book.new do |f| %>
   <p>Title</p>
   <%= f.text_field :title %>

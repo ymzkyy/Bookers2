@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div class="container">  
+  <div class="row">  
+  <table class="table table-striped">
+   <div class="col-lg-4">
+    
+
+    <%= render 'books/book', users: @users, books: @books %>
+
+      </div>
+          <h1>Books</h1>
+          <p>Title</p>
+          <p>Opinion</p>
+          <div>
+              
+            <%= link_to book_path(@book.id) do %>
+              <p> <%= @book.title %></p>
+              <% end %>
+              <p> <%= @book.body %></p>
+            </div>
+          
+   
+</table>
+</div>
