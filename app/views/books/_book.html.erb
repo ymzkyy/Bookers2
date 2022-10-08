@@ -10,7 +10,6 @@
     <% else %>
       <%= image_tag 'no_image', size: "100x100" %>
     <% end %>
-    
     <p>
 <table class="table table-striped">
   <thead>
@@ -21,7 +20,11 @@
   </thead>
   <tbody>
       <td>introduction</td>
-      <td><%= current_user.caption %></td>
+      <% if current_user.caption.attached? %>
+      <%= current_user.caption %>
+    <% else %>
+      
+    <% end %>
   </tbody>
   </p>
 </table>

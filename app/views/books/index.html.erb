@@ -1,24 +1,30 @@
 
-    
+
 
 
 <%= render 'books/book', users: @users, books: @books %>
- 
- <div class="col-lg-8">
 
-           <h1>Books</h1>
-          <% if @user.image.attached? %>
+ <div class="col-lg-8">
+  <h1>Books</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+      <td><% if @user.image.attached? %>
           <%= image_tag @user.image, size: "100x100" %>
           <% else %>
           <%= image_tag 'no_image', size: "100x100" %>
-          <% end %>
-          <p><%= link_to @user.name, user_path(current_user) %></p>
-          <p>Title <%= @book.title %></p>
-          <p>Opinion <%= @book.body %></p>
-
-
-
-</div> 
+          <% end %></td>
+      <td><%= Book.new.title %></td>
+      <td><%= @book.body %></td>
+  </tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
