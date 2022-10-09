@@ -1,27 +1,30 @@
 
     <%= render 'books/book', users: @users, books: @books %>
-
-      <div class="col-lg-6">
-          <h1>Books detail</h1>
-          
-          <% if @user.image.attached? %>
-          <%= image_tag @user.image, size: "100x100" %>
-          <% else %>
-          <%= image_tag 'no_image', size: "100x100" %>
-          <% end %>
-          <p><%= link_to @user.name, user_path(current_user) %></p>
-          <p>Title <%= @book.title %></p>
-          <p>Opinion <%= @book.body %></p>
-          <%= link_to "Edit", edit_book_path, class: "btn btn-success" %>
-          <% if @book.user == current_user %>
-          <%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-danger" %>
-          
-  <% end %>
     
-</div>
-</div>
-</div>
-</div>
+<div class="col-lg-6">
+          <h1>Books detail</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <%= image_tag @user.get_profile_image %>
+        <br><%= link_to @user.name, user_path(current_user) %>
+        </th>
+      <th><%= @book.title %></th>
+      <th><%= @book.body %></th>
+      <th><%= link_to "Edit", edit_book_path, class: "btn btn-success" %></th>
+      <th>
+        <% if @book.user == current_user %>
+          <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+  
+</table>
 
 
-
+</div>
+</div>
+</div>
+</div>

@@ -1,36 +1,33 @@
-<div class = "main" >
+
 <p id="notice"><%= notice %></p>
-<div class="container px-5 px-sm-0">  
+<div class="container px-8 px-sm-0">  
   <div class="row">
    <div class="col-lg-3">
 
 <h2>User info</h2>
-<% if current_user.image.attached? %>
-      <%= image_tag current_user.image, size: "100x100" %>
-    <% else %>
-      <%= image_tag 'no_image', size: "100x100" %>
-    <% end %>
+      <%= image_tag current_user.get_profile_image %>
     <p>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>name</th>
-      <th><%= current_user.name %></th>
-    </tr>
-  </thead>
-  <tbody>
-      <td>introduction</td>
-      <% if current_user.caption.attached? %>
-      <%= current_user.caption %>
-    <% else %>
-      
-    <% end %>
-  </tbody>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th><%= current_user.name %></th>
+          </tr>
+        </thead>
+        <tbody>
+            <td>introduction</td>
+            <td><%= current_user.caption %></td>
+        </tbody>
   </p>
 </table>
+
   <div class = "edit">
 <%= link_to edit_user_path(current_user) do %>
-  <i class="fa-sharp fa-solid fa-user-gear"></i>
+<div class= "btn btn-outline-secondary btn-block " >
+  
+  <button class="btn btn-Secondary" type="button">
+  <i class="fa-sharp fa-solid fa-user-gear"></i></button>
+</div>
 <% end %>
 </div>
 <h2>New book</h2>
