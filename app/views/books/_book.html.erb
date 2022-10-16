@@ -1,11 +1,13 @@
 
 
+
 <p id="notice"><%= notice %></p>
 <div class="container px-8 px-sm-0">  
   <div class="row">
    <div class="col-lg-3">
 
 <h2>User info</h2>
+
       <%= image_tag current_user.get_profile_image %>
     <p>
       <table class="table table-striped">
@@ -17,7 +19,7 @@
         </thead>
         <tbody>
             <td>introduction</td>
-            <td><%= current_user.caption %></td>
+            <td><%= current_user.introduction %></td>
         </tbody>
   </p>
 </table>

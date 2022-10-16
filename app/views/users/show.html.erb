@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <% @books.each do |user| %>
-    
+
     <tr>
       <td><%= image_tag @user.get_profile_image %></td>
       <td><%= link_to user.title, book_path(current_user) %></td>

@@ -1,11 +1,4 @@
-<% if Book.new.errors.any? %>
-  <%= Book.new.errors.count %>件のエラーが発生しました
-  <ul>
-    <% Book.new.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+
 <%= render 'books/book', users: @users, books: @books %>
 
  <div class="col-lg-8">
